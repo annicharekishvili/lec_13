@@ -1,0 +1,55 @@
+@import 'variables';
+@import 'reset';
+@import 'mixins';
+
+h1 {
+  color: $color;
+  font-family: $font-family;
+  font-size: $font-size;
+}
+
+.button {
+  @include button;
+}
+
+button {
+  @extend .button;
+  border-radius: 10px;
+}
+
+section {
+  &.sec1 {
+    @include flexContainer();
+
+    .box {
+      @include flexContainer;
+    }
+
+    .box1 {
+      @include box(blue);
+    }
+    .box2 {
+      @include box(red);
+    }
+    .box3 {
+      @include box(green);
+    }
+  }
+
+  &.sec2 {
+    @include flexContainer($justify: space-between);
+
+    .box {
+      @include flexContainer;
+    }
+    .box1 {
+      @include box(coral);
+    }
+    .box2 {
+      @include box(yellow);
+    }
+    .box3 {
+      @include box(pink);
+    }
+  }
+}
